@@ -1,0 +1,25 @@
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+  <div class="container py-5" style="max-width: 540px">
+    <h1 class="text-center">Log in</h1>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="mb-3">
+        <%= f.label :email, class: 'form-label' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'Enter your email address' %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :password, class: 'form-label' %>
+        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: 'Enter your password' %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.submit 'Log in', class: 'btn btn-dark w-100', placeholder: 'Submit' %>
+      </div>
+    <% end %>
+
+    <div class="mb-3 text-center">
+      Don't have an account? <%= link_to 'Sign up', new_user_registration_path %>
+    </div>
+  </div>
+</div>
