@@ -7,12 +7,24 @@
 
       <div class="mb-3">
         <%= f.label :email, class: 'form-label' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'Enter your email address' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'Email' %>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label w-100 mb-0">
+          Full Name
+          <%= f.email_field :full_name, class: 'form-control mt-2', placeholder: 'Full Name' %>
+        </label>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password, class: 'form-label' %>
+        <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder: 'Password' %>
       </div>
 
       <div class="mb-4">
-        <%= f.label :password, class: 'form-label' %>
-        <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder: 'Choose a password' %>
+        <%= f.label :username, class: 'form-label' %>
+        <%= f.email_field :username, class: 'form-control', placeholder: 'Username' %>
       </div>
 
       <div class="mb-3">
