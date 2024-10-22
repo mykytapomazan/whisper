@@ -1,0 +1,12 @@
+<%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-dark btn-lg' %>
+
+<%= form_with model: Post.new, url: posts_path, method: :post, local: true do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% Post.find_each do |post| %>
+    <li><%= post.body %></li>
+  <% end %>
+</ul>

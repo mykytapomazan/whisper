@@ -1,6 +1,0 @@
-<% if user_signed_in? %>
-  <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-dark btn-lg' %>
-<% else %>
-  <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-dark btn-lg' %>
-  <%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark btn-lg' %>
-<% end %>
