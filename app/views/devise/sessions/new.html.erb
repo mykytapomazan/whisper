@@ -6,13 +6,13 @@
       <div class="mb-3">
         <label class="form-label w-100 mb-0">
           Username or Email
-          <%= f.text_field :login, autofocus: true, class: 'form-control mt-2', placeholder: 'Username or Email' %>
+          <%= f.text_field :login, autofocus: true, class: 'form-control mt-2', placeholder: 'Username or Email', required: true %>
         </label>
       </div>
 
       <div class="mb-4">
         <%= f.label :password, class: 'form-label' %>
-        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: 'Password' %>
+        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: 'Password', required: true %>
       </div>
 
       <div class="mb-3">
