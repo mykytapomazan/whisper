@@ -1,12 +1,10 @@
-<%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-dark btn-lg' %>
+<div class="col-6">
+  <h1 class="mb-3"><%= link_to 'Home', root_path, class: 'fs-4 text-decoration-none text-black fw-semibold' %></h1>
+  <div class="mb-4">
+    <%= render 'shared/post_form' %>
+  </div>
+  <%= render Post.order(created_at: :desc) %>
+</div>
 
-<%= form_with model: Post.new, url: posts_path, method: :post, local: true do |f| %>
-  <%= f.text_field :body %>
-  <%= f.submit %>
-<% end %>
-
-<ul>
-  <% Post.find_each do |post| %>
-    <li><%= post.body %></li>
-  <% end %>
-</ul>
+<div class="col-3">
+</div>

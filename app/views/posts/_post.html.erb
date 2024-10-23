@@ -1,0 +1,4 @@
+<div class="px-4 py-3 post">
+  <p>@<%= post.user.username %> • <%= time_ago_in_words(post.created_at) %></p>
+  <p class="mb-0"><%= simple_format(post.body) %></p>
+</div>

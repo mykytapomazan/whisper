@@ -1,0 +1,79 @@
+<aside class="col-3 side-navbar position-sticky vh-100 sticky-top">
+  <div class="d-flex align-items-center fs-2 mb-1">
+    <%= link_to 'Whisper', root_path, class: 'text-decoration-none link-dark fw-bold rounded-pill px-4 my-2' %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-1">
+    <%= link_to root_path, class: "text-decoration-none link-dark px-4 py-2 rounded-pill side-navbar-link w-75 d-flex align-items-center #{nav_link_active? 'dashboard'}" do %>
+      <i class="bi bi-house-door-fill me-3 fs-4"></i>
+      Home
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-1">
+    <%= link_to root_path, class: 'text-decoration-none link-dark px-4 py-2 rounded-pill side-navbar-link w-75 d-flex align-items-center' do %>
+      <i class="bi bi-compass-fill fs-4 me-3"></i>
+      Explore
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-1">
+    <%= link_to root_path, class: 'text-decoration-none link-dark px-4 py-2 rounded-pill side-navbar-link w-75 d-flex align-items-center' do %>
+      <i class="bi bi-bell-fill me-3 fs-4"></i>
+      Notifications
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-1">
+    <%= link_to root_path, class: 'text-decoration-none link-dark px-4 py-2 rounded-pill side-navbar-link w-75 d-flex align-items-center' do %>
+      <i class="bi bi-envelope-fill me-3 fs-4"></i>
+      Messages
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-1">
+    <%= link_to root_path, class: 'text-decoration-none link-dark px-4 py-2 rounded-pill side-navbar-link w-75 d-flex align-items-center' do %>
+      <i class="bi bi-bookmark-fill me-3 fs-4"></i>
+      Bookmarks
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-3">
+    <%= link_to root_path, class: 'text-decoration-none link-dark px-4 py-2 rounded-pill side-navbar-link w-75 d-flex align-items-center' do %>
+      <i class="bi bi-person-fill me-3 fs-4"></i>
+      Profile
+    <% end %>
+  </div>
+
+  <div class="d-flex align-items-center fs-5 mb-3 ps-1 pe-5 me-2">
+    <%= button_tag 'Post', class: 'btn btn-dark btn-lg rounded-pill w-100', data: { bs_toggle: 'modal', bs_target: '#post-modal' } %>
+  </div>
+
+  <div class="dropdown me-4 position-absolute bottom-0 mb-4 w-75">
+    <div class="btn side-navbar-link border-0 background-0 p-2 d-flex align-items-center rounded-pill" data-bs-toggle="dropdown" aria-expanded="false">
+      <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngDLxVdX-4fhpWyG8hDPxUWyGV1B9uOXJ3Q&s', size: '48x48', alt: 'profile picture', class: 'rounded-circle me-1' %>
+      <div class="d-flex flex-column text-start ms-2">
+        <span class="fw-semibold"><%= truncate(current_user.full_name, length: 18) %></span>
+        <small class="text-secondary">@<%= truncate(current_user.username, length: 20) %></small>
+      </div>
+    </div>
+    <ul class="dropdown-menu dropdown-menu-end text-center my-1 rounded-pill w-100">
+      <li class="side-navbar-link mx-2 p-1 rounded-pill">
+        <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'link-dark text-decoration-none d-block' %>
+      </li>
+    </ul>
+  </div>
+</aside>
+
+<div class="modal modal-lg" id="post-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header pb-0 border-bottom-0">
+        <button type="button" class="btn-close mx-0 shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render 'shared/post_form', form_submit_path: posts_path, button_label: 'Post', placeholder_text: "What's happening?" %>
+      </div>
+    </div>
+  </div>
+</div>

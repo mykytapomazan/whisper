@@ -1,0 +1,6 @@
+<%= form_with model: Post.new, url: posts_path, local: true do |f| %>
+  <%= f.text_area :body, placeholder: "What's happening?", class: 'form-control border-0 shadow-none fs-5 mb-4', rows: 3 %>
+  <div class="d-flex justify-content-end">
+    <%= f.submit 'Post', class: 'btn btn-dark rounded-pill px-4' %>
+  </div>
+<% end %>
