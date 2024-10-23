@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
   def create
-    post = Post.new(post_params.merge(user: current_user))
+    @post = Post.new(post_params.merge(user: current_user))
 
-    if post.save
-      redirect_to root_path
+    if @post.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.turbo_stream
+      end
     end
   end
 

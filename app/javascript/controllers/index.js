@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import PostFormController from "./post_form_controller"
+application.register("post-form", PostFormController)

@@ -3,7 +3,9 @@
   <div class="mb-4">
     <%= render 'shared/post_form' %>
   </div>
-  <%= render Post.order(created_at: :desc) %>
+  <div id="posts">
+    <%= render Post.order(created_at: :desc) %>
+  </div>
 </div>
 
 <div class="col-3">

@@ -1,6 +1,9 @@
-<%= form_with model: Post.new, url: posts_path, local: true do |f| %>
-  <%= f.text_area :body, placeholder: "What's happening?", class: 'form-control border-0 shadow-none fs-5 mb-4', rows: 3 %>
+<%= form_with model: Post.new, url: posts_path, local: true, data: { controller: 'post-form', action: "turbo:submit-end->post-form#submitEnd" } do |f| %>
+  <%= f.text_area :body, placeholder: "What's happening?",
+                  class: 'form-control border-0 shadow-none fs-5 mb-4',
+                  required: true, rows: 3, data: { target: 'post-form.body' } %>
   <div class="d-flex justify-content-end">
-    <%= f.submit 'Post', class: 'btn btn-dark rounded-pill px-4' %>
+    <%= f.submit 'Post', class: 'btn btn-dark rounded-pill px-4',
+                 data: { target: 'post-form.submit' } %>
   </div>
 <% end %>
