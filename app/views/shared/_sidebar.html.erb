@@ -51,7 +51,7 @@
 
   <div class="dropdown me-4 position-absolute bottom-0 mb-4 w-75">
     <div class="btn side-navbar-link border-0 background-0 p-2 d-flex align-items-center rounded-pill" data-bs-toggle="dropdown" aria-expanded="false">
-      <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngDLxVdX-4fhpWyG8hDPxUWyGV1B9uOXJ3Q&s', size: '48x48', alt: 'profile picture', class: 'rounded-circle me-1' %>
+      <%= image_tag current_user.profile_picture_url, size: '42x42', alt: 'Profile picture', class: 'rounded-circle me-1' %>
       <div class="d-flex flex-column text-start ms-2">
         <span class="fw-semibold"><%= truncate(current_user.full_name, length: 18) %></span>
         <small class="text-secondary">@<%= truncate(current_user.username, length: 20) %></small>
