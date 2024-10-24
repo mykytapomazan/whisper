@@ -9,6 +9,24 @@
         <span class="text-muted">@<%= post.user.username %> • <%= time_ago_in_words(post.created_at) %></span>
       </p>
       <p class="mb-0"><%= simple_format(post.body) %></p>
+
+      <div class="d-flex justify-content-evenly">
+        <%= link_to '', class: 'link-dark text-decoration-none action-link' do %>
+          <i class="bi bi-chat me-1"></i>
+        <% end %>
+        <%= link_to '', class: 'link-dark text-decoration-none action-link' do %>
+          <i class="bi bi-arrow-repeat me-1"></i>
+        <% end %>
+        <%= link_to '', class: 'link-dark text-decoration-none action-link' do %>
+          <i class="bi bi-heart me-1"></i>
+        <% end %>
+        <%= link_to '', class: 'link-dark text-decoration-none action-link' do %>
+          <i class="bi bi-bar-chart me-1"></i>
+        <% end %>
+        <%= link_to '', class: 'link-dark text-decoration-none action-link' do %>
+          <i class="bi bi-bookmark me-2"></i>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>

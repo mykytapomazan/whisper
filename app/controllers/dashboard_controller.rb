@@ -1,3 +1,5 @@
 class DashboardController < ApplicationController
-  def index; end
+  def index
+    @posts = Post.includes(:user).order(created_at: :desc)
+  end
 end

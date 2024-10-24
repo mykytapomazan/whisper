@@ -14,3 +14,10 @@ aside.side-navbar {
     cursor: pointer;
   }
 }
+
+.action-link {
+  &:hover {
+    transform: scale(1.2);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+}
